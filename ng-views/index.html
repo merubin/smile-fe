@@ -1,0 +1,16 @@
+<h1>Photos</h1>
+<form data-ng-submit="vm.create()" >
+  <input placeholder="name" name="photo[name]" data-ng-model="vm.newPhoto.name" >
+  <input placeholder="description" name="photo[description]" data-ng-model="vm.newPhoto.description" >
+  <input placeholder="photoUrl" name="photo[photoUrl]"  data-ng-model="vm.newPhoto.photoUrl" >
+<button type="submit" > Add New Photo </button>
+</form>
+
+<div class="photos" data-ng-repeat="photo in vm.photos">
+  <div class="photo">
+    <p>
+      {{ photo.name }}
+    </p>
+    <img src="{{ photo.photoUrl }}" alt="{{ photo.name }}" />
+  </div>
+</div>
